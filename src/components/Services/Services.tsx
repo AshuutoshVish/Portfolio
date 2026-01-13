@@ -7,12 +7,12 @@ import { Section } from "../Section";
 
 export default function Services({ id }: any) {
   const services = [
-    "Backend Engineering",
-    "END-TO-END AI Workflow Automation",
-    "Custom LLM Apps (RAG, Bots, Chatbots)",
-    "ML Solutions & Recommendation Systems",
-    "Financial Data Engineering & Visualization",
-    "Secure Flows for Enterprise Apps (OAuth2, JWT, API Keys, Security)",
+    "Backend API Development (Python, Django, FastAPI)",
+    "E2E Workflow Automation with n8n (APIs, Webhooks, Cron)",
+    "AI & LLM Applications (RAG, Chatbots, Agents)",
+    "Automation Pipelines & System Integrations",
+    "Data Processing, Analytics & Visualization",
+    "Secure Authentication & Access Control (OAuth2, JWT, API Keys, RBAC)",
   ];
 
   return (
@@ -23,7 +23,7 @@ export default function Services({ id }: any) {
             {/* Header Box */}
             <div className="bg-black rounded-xl p-3 mb-6 relative">
               <h1 className="text-white text-2xl lg:text-3xl font-bold leading-tight">
-                Your Complete Web Needs, Handled with Expertise
+                Backend, Automation & AI — Built for Real-World Scale
               </h1>
               {/* Yellow squiggly line */}
               <Image
@@ -38,8 +38,9 @@ export default function Services({ id }: any) {
 
             {/* Description */}
             <p className="text-white text-lg mb-6 leading-relaxed px-3">
-              End-to-end website solutions ❤️🔥 that ensure your website looks
-              great, functions flawlessly, and drives results.
+            I design and build production-grade backend systems, automation workflows,
+            and AI solutions that improve efficiency, reliability, and scalability for
+            startups and growing teams.
             </p>
 
             {/* CTA Button */}
@@ -52,7 +53,7 @@ export default function Services({ id }: any) {
               }}
               className="bg-black hover:bg-gray-800 text-white px-8 py-3 md:ml-3 rounded-xl font-semibold text-lg"
             >
-              BOOK A CALL
+              DISCUSS YOUR PROJECT
             </Button>
           </div>
 

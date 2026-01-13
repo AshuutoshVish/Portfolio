@@ -69,24 +69,12 @@ export function Background(id?: any) {
                 variants={fadeUp}
                 className="text-4xl sm:text-5xl md:text-6xl text-white text-center"
               >
-                Beyond{" "}
-                <span className="relative mx-1 inline-block">
-                  <span className="text-[#8b8bff]">Beautiful</span>
-                  <motion.span
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 1.2, duration: 0.5 }}
-                    className="absolute -top-2 text-[#8b8bff] hidden sm:inline"
-                  >
-                    <LottiePlayer
-                      animationData={animationData}
-                      style={{ width: 50, height: 50 }}
-                    />
-                  </motion.span>
-                </span>
+                Building{" "}
+                <span className="text-[#8b8bff]">Scalable Automation</span>, APIs &{" "}
+                <span className="text-[#8b8bff]">AI Systems</span>
                 <br />
-                <span className="leading-tight tracking-tight">
-                  We Build Websites That Perform.
+                <span className="leading-tight tracking-tight text-gray-300 text-xl sm:text-2xl block mt-3">
+                  Python Backend Developer • n8n Automation • AI Integrations
                 </span>
               </motion.h1>
 
@@ -95,9 +83,9 @@ export function Background(id?: any) {
                 variants={fadeUp}
                 className="text-base sm:text-lg text-gray-400 max-w-2xl text-center"
               >
-                We turn Figma designs into stunning, high-performance websites —
-                blending creativity and code to deliver fast, pixel-perfect
-                experiences that help your brand grow and stand out.
+                I help startups and businesses automate workflows, build reliable backend
+                systems, and integrate AI solutions using Python, FastAPI, Django, and n8n.
+                From APIs to production automation — I deliver scalable real-world systems.
               </motion.p>
 
               {/* CTA Button */}
@@ -116,7 +104,7 @@ export function Background(id?: any) {
                     }
                   }}
                 >
-                  <span className="font-medium">Book a 30 min call</span>
+                  <span className="font-medium">Let’s Build Your Automation</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </HoverBorderGradient>
                 {/* Footer Text */}
@@ -124,7 +112,7 @@ export function Background(id?: any) {
                   variants={fadeUp}
                   className="text-gray-500 text-sm mt-2"
                 >
-                  Trusted by 20+ businesses
+                  Built production systems used by 10+ businesses
                 </motion.span>
               </motion.div>
             </motion.div>

@@ -14,62 +14,62 @@ const faqData: FAQItem[] = [
   {
     question: "What do you specialize in?",
     answer:
-      "I specialize in Python development, AI/ML solutions, automation workflows, and full-stack web applications.",
+      "I specialize in backend engineering, workflow automation, and building scalable systems using Python. My focus areas include API development, n8n automation, SaaS platforms, integrations, and production reliability.",
   },
   {
     question: "What technologies do you work with?",
     answer:
-      "Python, JavaScript, FastAPI, Django, Flask, React, SQL, PostgreSQL, Supabase, LangChain, RAG, n8n, Zapier and Docker.",
+      "Python, Django, FastAPI, n8n, Zapier, REST APIs, SQL/MySQL, Docker, GitHub, CI/CD, webhooks, OAuth2/JWT, third-party integrations, and cloud deployments.",
   },
   {
     question: "Do you have professional experience?",
     answer:
-      "Yes, I’ve worked as a Python Developer (AI) at Excellence Technologies and as a Software Developer AI Intern at Jobma.",
+      "Yes. I currently work as a Python Developer at Excellence Technologies and previously worked as an AI Intern at Jobma. I’ve contributed to production SaaS platforms, automation pipelines, and backend systems used by real customers.",
   },
   {
     question: "What kind of projects have you built?",
     answer:
-      "AI-powered recommendation systems, Dashpbards, Resume analysis tools, ML pipelines, Automated Social Media systems, API integrations, and AI chatbot solutions.",
+      "Production SaaS platforms (IntuitySync), backend APIs, automation workflows with n8n, AI pipelines, data analytics systems, HRMS backends, API integrations, and large-scale automation tools.",
   },
   {
-    question: "Do you build AI applications end-to-end?",
+    question: "Do you build systems end-to-end?",
     answer:
-      "Yes — from data preprocessing and model training to backend APIs, UI integration, and deployment.",
+      "Yes. I handle architecture design, backend APIs, automation workflows, integrations, database design, deployment, monitoring, and performance optimization.",
   },
   {
     question: "Do you offer automation and API integration services?",
     answer:
-      "Yes — I build automated workflows using n8n, Meta Graph API, webhooks, OAuth2, and third-party integrations.",
+      "Yes. I build automation workflows using n8n, webhooks, cron jobs, async processing, OAuth-based integrations, and third-party APIs.",
   },
   {
-    question: "Can you handle model deployment and production setups?",
+    question: "Can you handle production deployments and scaling?",
     answer:
-      "Yes — I deploy ML models using FastAPI, Docker, CI/CD, and cloud platforms with scalable architecture.",
+      "Yes. I deploy systems using Docker, CI/CD pipelines, and cloud environments with proper logging, monitoring, retries, and performance tuning for scale.",
   },
   {
     question: "Do you offer ongoing support and maintenance?",
     answer:
-      "Yes, I do! I'll keep your website updated, fix any issues, and make changes or improvements whenever needed.",
+      "Yes. I provide ongoing improvements, monitoring, bug fixes, optimization, and feature enhancements as your system grows.",
   },
   {
     question: "Are there any hidden costs?",
     answer:
-      "No surprises! My pricing is transparent and includes all essential services to build your website. If you want additional features or services beyond what's in our agreement, I'll clearly explain any extra costs upfront.",
+      "No. Pricing and scope are discussed clearly upfront. Any additional features or changes are communicated before implementation.",
   },
   {
-    question: "What if I'm not happy with the final result?",
+    question: "What if requirements change during development?",
     answer:
-      "Your satisfaction is my priority. I'll work closely with you to address any concerns and make sure you're happy with the outcome.",
+      "That’s completely fine. I work in an iterative manner and adapt based on feedback while keeping timelines and scope transparent.",
   },
   {
     question: "How can I get started?",
     answer:
-      "Just reach out to me through my contact page. I'll discuss your project's needs and guide you through the process step by step.",
+      "Reach out through the contact section. We’ll discuss your goals, technical requirements, timelines, and next steps.",
   },
   {
     question: "How can someone contact or hire you?",
     answer:
-      "📩 ashusharma3535@gmail.com\n +91 8881619966\n https://www.linkedin.com/in/ashuutosh/",
+      "📩 ashusharma3535@gmail.com\n📞 +91 8881619966\n🔗 https://www.linkedin.com/in/ashuutosh/",
   },
 ];
 

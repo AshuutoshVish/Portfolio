@@ -3,20 +3,17 @@
 import React, { forwardRef, useRef } from "react";
 
 import {
-  SiMongodb,
-  SiExpress,
-  SiReact,
-  SiNodedotjs,
-  SiTailwindcss,
-  SiGithub,
+  SiPython,
+  SiN8N,
+  SiDjango,
   SiPostman,
+  SiGithub,
   SiVisualstudiocode,
 } from "react-icons/si";
 import { FaUser } from "react-icons/fa";
 
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "./animated-beam";
-import { AiOutlineOpenAI } from "react-icons/ai";
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -50,7 +47,6 @@ export default function AnimatedBeamMultipleOutputDemo({
   const div5Ref = useRef<HTMLDivElement>(null);
   const div6Ref = useRef<HTMLDivElement>(null);
   const div7Ref = useRef<HTMLDivElement>(null);
-  const div8Ref = useRef<HTMLDivElement>(null);
   const centerRef = useRef<HTMLDivElement>(null);
   const userRef = useRef<HTMLDivElement>(null);
 
@@ -63,36 +59,46 @@ export default function AnimatedBeamMultipleOutputDemo({
       ref={containerRef}
     >
       <div className="flex size-full max-w-lg flex-row items-stretch justify-between gap-10">
+        {/* User */}
         <div className="flex flex-col justify-center">
-          <Circle ref={userRef} className="">
+          <Circle ref={userRef}>
             <Icons.user fill="#000" />
           </Circle>
         </div>
+
+        {/* Center Tool */}
         <div className="flex flex-col justify-center">
           <Circle ref={centerRef} className="size-16 text-black">
             <Icons.vscode fill="#0000FF" size={25} />
           </Circle>
         </div>
+
+        {/* Tech Stack */}
         <div className="flex flex-col justify-center gap-2">
           <Circle ref={div3Ref}>
-            <Icons.react className="text-blue-500 text-3xl animate-spin-slow" />
+            <Icons.python className="text-blue-600 text-3xl" />
           </Circle>
+
           <Circle ref={div4Ref}>
-            <Icons.node className="text-green-700 text-3xl" />
+            <Icons.n8n className="text-red-500 text-3xl" />
           </Circle>
+
           <Circle ref={div5Ref}>
-            <Icons.tailwind className="text-sky-400 text-3xl" />
+            <Icons.django className="text-green-700 text-3xl" />
           </Circle>
+
           <Circle ref={div6Ref}>
-            <Icons.github className="text-black text-3xl" />
-          </Circle>
-          <Circle ref={div7Ref}>
             <Icons.postman className="text-orange-500 text-3xl" />
           </Circle>
+
+          <Circle ref={div7Ref}>
+            <Icons.github className="text-black text-3xl" />
+          </Circle>
+
         </div>
       </div>
 
-      {/* AnimatedBeams */}
+      {/* Animated Beams */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div1Ref}
@@ -137,12 +143,6 @@ export default function AnimatedBeamMultipleOutputDemo({
       />
       <AnimatedBeam
         containerRef={containerRef}
-        fromRef={div8Ref}
-        toRef={centerRef}
-        duration={3}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
         fromRef={centerRef}
         toRef={userRef}
         duration={3}
@@ -152,13 +152,11 @@ export default function AnimatedBeamMultipleOutputDemo({
 }
 
 const Icons = {
-  openai: AiOutlineOpenAI,
   user: FaUser,
-  mongo: SiMongodb,
-  react: SiReact,
-  node: SiNodedotjs,
-  tailwind: SiTailwindcss,
-  github: SiGithub,
+  python: SiPython,
+  n8n: SiN8N,
+  django: SiDjango,
   postman: SiPostman,
+  github: SiGithub,
   vscode: SiVisualstudiocode,
 };

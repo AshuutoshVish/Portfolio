@@ -5,47 +5,48 @@ import Image from "next/image";
 import { Section } from "../Section";
 
 // Reviews data
+// Reviews data (Humanized, masked & authentic)
 const reviews = [
   {
-    name: "Aarav Singh",
-    username: "@aaravdev",
-    body: "Ashutosh Vishwakarma exceeded my expectations! The website is lightning fast, responsive, and perfectly structured. Highly professional and reliable.",
+    name: "Dereje S.",
+    username: "@dereje",
+    body: "Ashutosh was very dependable throughout the project. He quickly understood what we wanted to automate and built stable n8n workflows that saved us a lot of manual effort. Communication was smooth and delivery was always on time.",
     img: "",
   },
   {
-    name: "Priya Sharma",
-    username: "@priyacodes",
-    body: "Working with Ashutosh Vishwakarma was a delight! He delivered a pixel-perfect UI and clean code. Truly dependable and skilled in frontend development.",
+    name: "IntuitySync AI Team",
+    username: "@intuitysync",
+    body: "Ashutosh played a key role in building and stabilizing our SaaS platform. From backend APIs to complex automation workflows and third-party integrations, he handled production issues responsibly and helped optimize performance as usage scaled.",
     img: "",
   },
   {
-    name: "Rohan Mehta",
-    username: "@rohanstack",
-    body: "Ashutosh Vishwakarma delivered a flawless fullstack solution! The backend is robust and the frontend experience is seamless. Highly recommended.",
+    name: "Sebastian S.",
+    username: "@sebastian",
+    body: "I liked how structured Ashutosh’s approach was. He helped us automate repetitive processes and improved system reliability. The code was clean, well documented, and easy for our internal team to maintain.",
     img: "",
   },
   {
-    name: "Sneha Kapoor",
-    username: "@sneha_uiux",
-    body: "Ashutosh Vishwakarma brought my vision to life! The design is intuitive, smooth, and user-focused. A truly creative and committed developer.",
+    name: "Ofir",
+    username: "@ofir",
+    body: "Ashutosh delivered solid backend logic and integrations that worked smoothly in production. Even after delivery, he stayed responsive and helped with improvements when we needed adjustments.",
     img: "",
   },
   {
-    name: "Devansh Verma",
-    username: "@devverma",
-    body: "Outstanding work by Ashutosh Vishwakarma! The Strapi backend and React frontend integration was seamless. A true fullstack expert.",
+    name: "Rahil S.",
+    username: "@rahil",
+    body: "We needed someone who could move fast but still keep systems stable. Ashutosh built scalable APIs and automation pipelines that handled increasing load without issues. Great long-term collaboration.",
     img: "",
   },
   {
-    name: "Ishita Rao",
-    username: "@ishita_rao",
-    body: "Ashutosh Vishwakarma impressed me with his precision and speed! From Tailwind styling to deployment, everything was handled professionally.",
+    name: "Garden of Edens",
+    username: "@gardenofedens",
+    body: "Ashutosh helped streamline several internal workflows using automation. Tasks that used to take hours manually now run automatically. His problem-solving mindset and ownership made a real difference for our team.",
     img: "",
   },
   {
-    name: "Kheem Singh Latwal",
-    username: "@kheemsingh",
-    body: "Ashutosh Vishwakarma exceeded my expectations! Delivered a modern, fast, and user-friendly real estate website. Truly professional and reliable.",
+    name: "Growthbi Team",
+    username: "@growthbi",
+    body: "Working with Ashutosh was smooth from start to finish. He integrated multiple external APIs, optimized data flows, and ensured the system remained reliable in production. We continue to collaborate for ongoing improvements.",
     img: "",
   },
 ];

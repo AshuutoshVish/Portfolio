@@ -46,7 +46,6 @@ export default function ContactForm({ contact }: any) {
     const { name, value } = e.target;
     const fieldName = name as keyof FormData;
 
-    // Special handling for mobile number - only allow digits
     if (fieldName === "mobile") {
       const numericValue = value.replace(/[^0-9]/g, "");
       setFormData((prev) => ({
@@ -69,7 +68,6 @@ export default function ContactForm({ contact }: any) {
   const validateForm = (): FormErrors => {
     const newErrors: FormErrors = {};
 
-    // Required fields (email is now optional)
     const requiredFields: (keyof FormData)[] = [
       "name",
       "mobile",
@@ -86,7 +84,6 @@ export default function ContactForm({ contact }: any) {
       }
     });
 
-    // Mobile number validation - should be 10 digits
     if (
       formData.mobile &&
       (formData.mobile.length < 10 || formData.mobile.length > 10)
@@ -94,7 +91,6 @@ export default function ContactForm({ contact }: any) {
       newErrors.mobile = "Mobile number must be exactly 10 digits";
     }
 
-    // Email validation (optional but if provided, should be valid)
     if (formData.email && !/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
@@ -105,7 +101,6 @@ export default function ContactForm({ contact }: any) {
   const triggerConfetti = () => {
     setShowConfetti(true);
 
-    // Fire multiple confetti bursts for celebration effect
     const confettiOptions = [
       {
         particleCount: 100,
@@ -135,7 +130,6 @@ export default function ContactForm({ contact }: any) {
       }, index * 250);
     });
 
-    // Hide confetti canvas after animation
     setTimeout(() => {
       setShowConfetti(false);
     }, 3000);
@@ -152,9 +146,8 @@ export default function ContactForm({ contact }: any) {
 
     try {
       const url =
-        // "https://script.google.com/macros/s/AKfycbyy8vJsKt-YZBMNHovi6763nzmVT_h1zdSl1pdJGf-C8XwcRAYYfB_LSE4f-A5qR3s8/exec";
         "https://script.google.com/macros/s/AKfycbyfbFNYQsdAA5cg4KvFEFP7i9F7lkhH6c2CPXyhsbXK8b2nXhNp0LWuotrZ_w6ec6Jw/exec";
-      // Use a simple POST (no preflight) to avoid CORS OPTIONS 405 from Apps Script
+
       const body = new URLSearchParams({
         fullName: formData.name,
         email: formData.email,
@@ -164,18 +157,16 @@ export default function ContactForm({ contact }: any) {
         message: formData.description,
       }).toString();
 
-      const res = await fetch(url, {
+      await fetch(url, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body,
       });
 
-      // no-cors makes the response opaque; treat send as success
       triggerConfetti();
-      toast.success("Submitted! We'll call you soon 👍");
+      toast.success("Submitted! I'll get back to you shortly 👍");
 
-      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -204,7 +195,6 @@ export default function ContactForm({ contact }: any) {
     <Layout>
       <Section id="contact">
         <div className="text-white relative">
-          {/* Confetti Canvas */}
           {showConfetti && (
             <div className="fixed inset-0 z-[9999] pointer-events-none w-full h-full">
               <Confetti
@@ -223,20 +213,20 @@ export default function ContactForm({ contact }: any) {
                   Contact me
                 </div>
                 <h1 className="text-2xl md:text-4xl lg:text-5xl text-white leading-tight">
-                  Let's enhance your{" "}
+                  Let’s build{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-                    excellent enterprise
+                    scalable automation & backend systems
                   </span>{" "}
-                  with an amazing website
+                  for your product
                 </h1>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  For every prosperous enterprise, a proficient website is
-                  necessary, and I'm the expert for it. Contact me now, let's
-                  kick-start!
+                  Whether you need backend APIs, workflow automation, system
+                  integrations, or production optimization — let’s discuss how
+                  I can help you move faster and scale reliably.
                 </p>
                 <div className="space-y-6 pt-4">
                   <p className="text-gray-300 text-base">
-                    Also you can find me here:
+                    You can also find me here:
                   </p>
                   <div className="flex gap-4">
                     <a
@@ -261,11 +251,10 @@ export default function ContactForm({ contact }: any) {
                 <div className="space-y-6">
                   <div className="space-y-3">
                     <h2 className="text-2xl font-semibold text-white">
-                      Enter your details
+                      Share your requirements
                     </h2>
                     <p className="text-gray-400 text-base leading-relaxed">
-                      Let me know your details and I will get in touch with you
-                      within 24h.
+                      Fill in a few details and I’ll reach out within 24 hours.
                     </p>
                   </div>
 
@@ -307,7 +296,7 @@ export default function ContactForm({ contact }: any) {
                     <div>
                       <input
                         name="niche"
-                        placeholder="Your Website Niche *"
+                        placeholder="What are you building? (API, automation, SaaS, etc.) *"
                         value={formData.niche}
                         onChange={handleInputChange}
                         className="w-full bg-gray-800/10 border border-gray-600/40 text-white placeholder:text-gray-500 focus:border-blue-400/60 focus:ring-2 focus:ring-blue-400/20 focus:outline-none px-4 py-2 rounded-xl"
@@ -340,7 +329,7 @@ export default function ContactForm({ contact }: any) {
                       <div>
                         <input
                           name="budget"
-                          placeholder="Your Budget *"
+                          placeholder="Estimated Budget *"
                           value={formData.budget}
                           onChange={handleInputChange}
                           className="w-full bg-gray-800/10 border border-gray-600/40 text-white placeholder:text-gray-500 focus:border-blue-400/60 focus:ring-2 focus:ring-blue-400/20 focus:outline-none px-4 py-2 rounded-xl"
@@ -357,7 +346,7 @@ export default function ContactForm({ contact }: any) {
                     <div>
                       <textarea
                         name="description"
-                        placeholder="Tell me more about your needs... *"
+                        placeholder="Tell me about your requirements, timeline, and any integrations needed... *"
                         value={formData.description}
                         onChange={handleInputChange}
                         rows={5}
@@ -389,7 +378,7 @@ export default function ContactForm({ contact }: any) {
                     </HoverBorderGradient>
 
                     <p className="text-gray-400 text-sm text-start">
-                      Or you can email me at:{" "}
+                      Or email me directly at{" "}
                       <a
                         href="mailto:ashusharma3535@gmail.com"
                         className="text-blue-400 font-medium hover:text-blue-300 transition-colors"

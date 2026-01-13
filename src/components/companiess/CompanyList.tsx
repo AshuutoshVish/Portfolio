@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/ui/marquee";
-import QuadB from "../../../public/assets/quadb.png";
+import QuadB from "../../../public/assets/jobma.png";
 import Mastertrust from "../../../public/assets/mastertrust.png";
-import Hiranandani from "../../../public/assets/hiranandani.svg";
+import Hiranandani from "../../../public/assets/excellence_technologies.png";
 import Elepixala from "../../../public/assets/elpixala.png";
 import RsTech from "../../../public/assets/rstech.png";
 import Image from "next/image";
