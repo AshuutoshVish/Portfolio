@@ -39,11 +39,11 @@ const Page = () => {
       <div>
         <Header />
         <Background id="home" />
+        <About />
         <Project />
         <Services id="services" />
         <WhyChooseUs id="whyme" />
-        <MarqueeDemo id="reviews" />
-        {/* <About /> */}
+        {/* <MarqueeDemo id="reviews" /> */}
         <Faq />
         <ContactForm id="contact" />
         <LetsStartStartup />

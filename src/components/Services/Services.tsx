@@ -1,74 +1,148 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { CheckCircle } from "lucide-react";
 import Layout from "../HeroSection/Layout";
-import Image from "next/image";
-import Zigzag from "../../../public/assets/zigzag.svg";
 import { Section } from "../Section";
+import { 
+  Code2, 
+  Zap, 
+  Brain, 
+  Network, 
+  MessageSquare, 
+  Rocket,
+  Settings,
+  Cloud
+} from "lucide-react";
+
+interface Service {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+const services: Service[] = [
+  {
+    icon: Brain,
+    title: "AI Integration & Implementation",
+    description: "Seamlessly integrate GPT-4, OpenAI, and other AI models into your existing systems.",
+  },
+  {
+    icon: Settings,
+    title: "Custom Workflow Automation",
+    description: "Build powerful n8n and Zapier workflows that automate repetitive tasks.",
+  },
+  {
+    icon: Network,
+    title: "API Development & Integration",
+    description: "Connect multiple services with robust API integrations and custom endpoints.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Chatbot Development",
+    description: "Create intelligent chatbots using Dialogflow, OpenAI, and custom solutions.",
+  },
+  {
+    icon: Cloud,
+    title: "CRM Automation",
+    description: "Automate your HubSpot, ActiveCampaign, and other CRM workflows.",
+  },
+  {
+    icon: Rocket,
+    title: "Business Process Optimization",
+    description: "Analyze and optimize your workflows for maximum efficiency and cost savings.",
+  },
+];
+
+const ServiceCard = ({ service, index }: { service: Service; index: number }) => {
+  const Icon = service.icon;
+  
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group relative bg-white/5 border border-purple-500/30 rounded-2xl p-6 backdrop-blur-md hover:border-purple-500/60 transition-all duration-300 hover:scale-[1.02]"
+    >
+      {/* Icon */}
+      <div className="mb-4 flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-500/30 group-hover:from-purple-500/30 group-hover:to-blue-500/30 transition-all duration-300">
+        <Icon className="w-8 h-8 text-purple-400 group-hover:text-purple-300 transition-colors" />
+      </div>
+
+      {/* Title */}
+      <h3 className="text-white font-bold text-xl mb-3 group-hover:text-purple-200 transition-colors">
+        {service.title}
+      </h3>
+
+      {/* Description */}
+      <p className="text-gray-300 leading-relaxed text-base">
+        {service.description}
+      </p>
+
+      {/* Hover Gradient Effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-purple-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-purple-500/5 rounded-2xl transition-all duration-500 pointer-events-none" />
+    </motion.div>
+  );
+};
 
 export default function Services({ id }: any) {
-  const services = [
-    "Backend API Development (Python, Django, FastAPI)",
-    "E2E Workflow Automation with n8n (APIs, Webhooks, Cron)",
-    "AI & LLM Applications (RAG, Chatbots, Agents)",
-    "Automation Pipelines & System Integrations",
-    "Data Processing, Analytics & Visualization",
-    "Secure Authentication & Access Control (OAuth2, JWT, API Keys, RBAC)",
-  ];
-
   return (
     <Layout>
       <Section id="services">
-        <div className="bg-white/5 border border-white/10 sm:text-sm text-xs p-3 rounded-lg text-gray-300 backdrop-blur-md  flex flex-col md:flex-row gap-8 items-center w-full md:my-16 my-8">
-          <div className="flex-1 bg-gradient-to-br from-purple-600 via-blue-600 to-purple-700 rounded-2xl p-3 relative">
-            {/* Header Box */}
-            <div className="bg-black rounded-xl p-3 mb-6 relative">
-              <h1 className="text-white text-2xl lg:text-3xl font-bold leading-tight">
-                Backend, Automation & AI — Built for Real-World Scale
+        <div className="relative w-full overflow-hidden py-20">
+          <div className="relative z-10 mx-auto px-4">
+            {/* Header Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <p className="text-[#8b8bff] font-medium text-sm mb-2 mt-5">Services</p>
+              <h1 className="sm:text-4xl text-2xl md:text-5xl font-bold leading-tight mb-6">
+                <span className="text-white">What I</span>{" "}
+                <span className="text-gray-300 font-semibold">Offer</span>
+                <br />
+                <span className="text-white">Backend, Automation</span>{" "}
+                <span className="text-gray-400 font-semibold">
+                  & AI Solutions
+                </span>
               </h1>
-              {/* Yellow squiggly line */}
-              <Image
-                src={Zigzag}
-                alt=""
-                width={200}
-                height={100}
-                draggable={false}
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 lg:inline hidden"
-              />
+              <p className="mt-6 text-[#cfcfcf] text-base md:text-lg max-w-2xl mx-auto">
+                Comprehensive services to help your business scale with production-grade
+                backend systems, automation workflows, and AI-powered solutions.
+              </p>
+            </motion.div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              {services.map((service, index) => (
+                <ServiceCard key={service.title} service={service} index={index} />
+              ))}
             </div>
 
-            {/* Description */}
-            <p className="text-white text-lg mb-6 leading-relaxed px-3">
-            I design and build production-grade backend systems, automation workflows,
-            and AI solutions that improve efficiency, reliability, and scalability for
-            startups and growing teams.
-            </p>
-
-            {/* CTA Button */}
-            <Button
-              onClick={() => {
-                const section = document.getElementById("contact");
-                if (section) {
-                  section.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-              className="bg-black hover:bg-gray-800 text-white px-8 py-3 md:ml-3 rounded-xl font-semibold text-lg"
+            {/* Call to Action */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center"
             >
-              DISCUSS YOUR PROJECT
-            </Button>
-          </div>
-
-          {/* Right Side - Services List */}
-          <div className="flex-1 w-full space-y-5">
-            {services.map((service, index) => (
-              <div key={index} className="flex items-center gap-4">
-                <div className="w-6 h-6 rounded-full bg-[#3d3d74] flex items-center justify-center flex-shrink-0">
-                  <CheckCircle className="w-4 h-4 text-white" />
-                </div>
-                <h1 className="text-white font-medium text-lg tracking-wide">
-                  {service}
-                </h1>
-              </div>
-            ))}
+              <Button
+                onClick={() => {
+                  const section = document.getElementById("contact");
+                  if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-6 rounded-xl font-semibold text-lg shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300"
+              >
+                DISCUSS YOUR PROJECT
+              </Button>
+            </motion.div>
           </div>
         </div>
       </Section>

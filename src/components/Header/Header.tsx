@@ -56,9 +56,11 @@ export function Header({ className }: { className?: string }) {
 
   const navItems = [
     { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "Projects", id: "projects" },
     { name: "Services", id: "services" },
     { name: "Why me ?", id: "whyme" },
-    { name: "Reviews", id: "reviews" },
+    // { name: "Reviews", id: "reviews" },
     { name: "Contact", id: "contact" },
   ];
 
@@ -164,7 +166,7 @@ export function Header({ className }: { className?: string }) {
             >
               {/* Mobile Navigation Items */}
               <div className="space-y-2">
-                {navItems.slice(0, 4).map((item, index) => (
+                {navItems.map((item, index) => (
                   <motion.a
                     key={item.name}
                     className="block text-white hover:text-purple-400 cursor-pointer transition-all duration-300 text-lg py-1 px-6 rounded-xl hover:bg-purple-500/10 hover:backdrop-blur-sm border border-transparent hover:border-purple-500/20 group"

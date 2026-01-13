@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import { FC } from "react";
 import Layout from "../HeroSection/Layout";
+import { Section } from "../Section";
+import Image from "next/image";
+import { Code2, Zap, Brain, Award, Briefcase, Heart } from "lucide-react";
 
 const AboutPage: FC = () => {
   const fadeIn = {
@@ -11,110 +14,208 @@ const AboutPage: FC = () => {
     transition: { duration: 0.6 },
   };
 
+  const skills = [
+    "Python",
+    "Django",
+    "FastAPI",
+    "Pytorch",
+    "n8n",
+    "PostgreSQL",
+    "Supabase",
+    "Scikit-learn",
+    "Docker",
+    "Chatbot",
+    "LLM/RAG",
+    "API Development",
+    "Automation",
+    "System Integration",
+  ];
+
+  const achievements = [
+    {
+      icon: Briefcase,
+      title: "Production Systems",
+      description: "Built scalable backend systems handling thousands of requests daily",
+    },
+    {
+      icon: Zap,
+      title: "Automation Expert",
+      description: "Designed complex workflows reducing manual work by 80%+",
+    },
+    {
+      icon: Brain,
+      title: "AI Solutions",
+      description: "Implemented RAG pipelines and LLM applications for real-world use",
+    },
+    {
+      icon: Award,
+      title: "Reliable Delivery",
+      description: "Consistently delivered projects on time with high quality standards",
+    },
+  ];
+
   return (
-    <div className="relative min-h-screen w-full overflow-hidden">
-      <Layout>
-        <div className="relative z-10 mx-auto px-4 py-20 text-white">
-          {/* Logo/SVG Container */}
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mb-12 flex justify-center"
-          >
-            <div className="h-32 w-32">
-              <div className="h-full w-full rounded-full bg-white/20 p-4">
-                {/* SVG placeholder */}
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  className="h-full w-full"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                  />
-                </svg>
+    <Layout>
+      <Section id="about">
+        <div className="relative min-h-screen w-full overflow-hidden py-20">
+          <div className="relative z-10 mx-auto px-4">
+            {/* Header Section */}
+            <motion.div
+              variants={fadeIn}
+              initial="initial"
+              animate="animate"
+              className="text-center mb-10"
+            >
+              <p className="text-[#8b8bff] font-medium text-sm mb-2 mt-3">About Me</p>
+              <h1 className="sm:text-4xl text-2xl md:text-5xl font-bold leading-tight mb-6">
+                <span className="text-white">Building</span>{" "}
+                <span className="text-gray-300 font-semibold">robust</span>
+                <br />
+                <span className="text-white">backend systems</span>{" "}
+                <span className="text-gray-400 font-semibold">
+                  and automation solutions
+                </span>
+              </h1>
+            </motion.div>
+
+            {/* Main Content Grid */}
+            <div className="grid md:grid-cols-2 gap-12 mb-6">
+              {/* Personal Section */}
+              <motion.div
+                variants={fadeIn}
+                initial="initial"
+                animate="animate"
+                transition={{ delay: 0.2 }}
+                className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center">
+                    <Heart className="w-6 h-6 text-white" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-white">Personal</h2>
+                </div>
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-purple-500/30">
+                    <Image
+                      src="/assets/ashutosh.png"
+                      alt="Ashutosh"
+                      fill
+                      sizes="192px"
+                      className="object-cover"
+                      draggable={false}
+                    />
+                  </div>
+                </div>
+                <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                I’m a backend and automation engineer who loves building systems that actually work in production — reliable, scalable, and easy to maintain
+                </p>
+                <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                Outside of coding, I enjoy experimenting with new technologies, optimizing workflows, and contributing to automation ideas that save time and reduce manual effort.
+                </p>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  I believe great software is not just about features, but about performance, reliability, and real business impact.
+                </p>
+              </motion.div>
+
+              {/* Professional Section */}
+              <motion.div
+                variants={fadeIn}
+                initial="initial"
+                animate="animate"
+                transition={{ delay: 0.3 }}
+                className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                    <Briefcase className="w-6 h-6 text-white" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-white">Professional</h2>
+                </div>
+                <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                  I specialize in building production-grade backend systems, automation pipelines, and AI-powered workflows. With strong experience in Python, FastAPI, Django, and n8n, I help teams automate operations, scale systems, and ship reliable products faster.
+                </p>
+                <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                  I’ve designed and maintained 200+ automation workflows, built secure REST APIs, integrated third-party platforms (Meta, Stripe, Supabase, Slack), and delivered AI systems including RAG pipelines, content automation, and analytics dashboards.
+                </p>
+                <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                  My work focuses on performance optimization, fault-tolerant architectures, async processing, and clean API design — ensuring systems remain stable at scale.
+                </p>
+                <div className="flex items-center gap-2 text-purple-400">
+                  <Code2 className="w-4 h-4" />
+                  <span className="font-semibold">Always learning, always building, always shipping.</span>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Skills Section */}
+            <motion.div
+              variants={fadeIn}
+              initial="initial"
+              animate="animate"
+              transition={{ delay: 0.4 }}
+              className="mb-16"
+            >
+              <h2 className="text-3xl font-bold text-white mb-8 text-center">
+                Skills & Technologies
+              </h2>
+              <div className="flex flex-wrap gap-3 justify-center">
+                {skills.map((skill, index) => (
+                  <motion.div
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5 + index * 0.05 }}
+                    className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 px-6 py-3 rounded-full text-white font-medium hover:border-purple-500/60 hover:scale-105 transition-all duration-300"
+                  >
+                    {skill}
+                  </motion.div>
+                ))}
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Main Content */}
-          <motion.div
-            variants={fadeIn}
-            initial="initial"
-            animate="animate"
-            className="text-center"
-          >
-            <h1 className="mb-6 text-5xl font-bold">AVA Tech Solutions</h1>
-            <p className="mb-8 text-xl font-light leading-relaxed">
-              Pioneering Digital Excellence
-            </p>
-          </motion.div>
-
-          {/* About Content */}
-          <motion.div
-            variants={fadeIn}
-            initial="initial"
-            animate="animate"
-            transition={{ delay: 0.2 }}
-            className="mt-16 grid gap-12 md:grid-cols-2"
-          >
-            <div className="space-y-6">
-              <h2 className="text-3xl font-semibold">Who We Are</h2>
-              <p className="text-lg text-gray-300">
-                AVA Tech Solutions is a forward-thinking technology company
-                dedicated to transforming businesses through innovative digital
-                solutions. With our expert team and cutting-edge technology, we
-                help organizations navigate the digital landscape and achieve
-                their full potential.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <h2 className="text-3xl font-semibold">Our Mission</h2>
-              <p className="text-lg text-gray-300">
-                We strive to deliver exceptional technology solutions that
-                empower businesses to thrive in the digital age. Through our
-                commitment to excellence and innovation, we help our clients
-                stay ahead of the curve and achieve sustainable growth.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Stats Section */}
-          <motion.div
-            variants={fadeIn}
-            initial="initial"
-            animate="animate"
-            transition={{ delay: 0.4 }}
-            className="mt-20 grid grid-cols-2 gap-8 md:grid-cols-4"
-          >
-            {[
-              { number: "10+", label: "Years Experience" },
-              { number: "200+", label: "Projects Completed" },
-              { number: "50+", label: "Team Members" },
-              { number: "95%", label: "Client Satisfaction" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.6 + index * 0.1 }}
-                  className="mb-2 text-4xl font-bold text-blue-400"
-                >
-                  {stat.number}
-                </motion.div>
-                <p className="text-sm text-gray-300">{stat.label}</p>
+            {/* Achievements Section */}
+            <motion.div
+              variants={fadeIn}
+              initial="initial"
+              animate="animate"
+              transition={{ delay: 0.6 }}
+            >
+              <h2 className="text-3xl font-bold text-white mb-8 text-center">
+                Key Achievements
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {achievements.map((achievement, index) => {
+                  const Icon = achievement.icon;
+                  return (
+                    <motion.div
+                      key={achievement.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.7 + index * 0.1 }}
+                      className="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-md hover:border-purple-500/30 transition-all duration-300"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-white mb-2">
+                            {achievement.title}
+                          </h3>
+                          <p className="text-gray-300 leading-relaxed">
+                            {achievement.description}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
-            ))}
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
-      </Layout>
-    </div>
+      </Section>
+    </Layout>
   );
 };
 

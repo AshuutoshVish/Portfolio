@@ -142,7 +142,7 @@ export default function WhyChooseUs({ whyme }: any) {
   return (
     <Layout>
       <Section id="whyme">
-        <section className="mb-5">
+        <section className="mb-5 pt-20 md:pt-24">
           <p className="text-[#8b8bff] font-medium text-sm mb-4">Why me?</p>
 
           <h1 className="sm:text-4xl text-2xl md:text-5xl font-bold leading-tight mb-4">

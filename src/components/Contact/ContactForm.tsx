@@ -209,7 +209,7 @@ export default function ContactForm({ contact }: any) {
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               {/* Left Content */}
               <div className="space-y-8 lg:pr-8">
-                <div className="text-[#8b8bff] font-medium text-sm mb-4">
+                <div className="text-[#8b8bff] font-medium text-m mb-4">
                   Contact me
                 </div>
                 <h1 className="text-2xl md:text-4xl lg:text-5xl text-white leading-tight">
@@ -254,7 +254,7 @@ export default function ContactForm({ contact }: any) {
                       Share your requirements
                     </h2>
                     <p className="text-gray-400 text-base leading-relaxed">
-                      Fill in a few details and I’ll reach out within 24 hours.
+                      Fill in a few details and I’ll reach out within 24-48 hours.
                     </p>
                   </div>
 
@@ -346,7 +346,7 @@ export default function ContactForm({ contact }: any) {
                     <div>
                       <textarea
                         name="description"
-                        placeholder="Tell me about your requirements, timeline, and any integrations needed... *"
+                        placeholder="Tell me about your requirements, and any integrations needed... *"
                         value={formData.description}
                         onChange={handleInputChange}
                         rows={5}
