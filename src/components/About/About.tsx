@@ -16,18 +16,19 @@ const AboutPage: FC = () => {
 
   const skills = [
     "Python",
+    "JavaScript",
     "Django",
     "FastAPI",
-    "Pytorch",
+    "SQL",
     "n8n",
-    "PostgreSQL",
-    "Supabase",
-    "Scikit-learn",
-    "Docker",
+    "Pytorch",
+    "GenAI",
     "Chatbot",
     "LLM/RAG",
-    "API Development",
+    "Git",
+    "Docker",
     "Automation",
+    "API Development",
     "System Integration",
   ];
 
