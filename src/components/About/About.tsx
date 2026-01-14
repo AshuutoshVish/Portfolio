@@ -19,6 +19,7 @@ const AboutPage: FC = () => {
     "JavaScript",
     "Django",
     "FastAPI",
+    "Rest APIs",
     "SQL",
     "n8n",
     "Pytorch",
