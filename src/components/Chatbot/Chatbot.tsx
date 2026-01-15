@@ -21,7 +21,8 @@ export default function Chatbot() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+  const MAX_MESSAGE_LENGTH = 200; // Maximum characters per message
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
@@ -54,9 +55,16 @@ export default function Chatbot() {
   const handleSend = async () => {
     if (!inputValue.trim() || isLoading) return;
 
+    // Validate message length
+    const trimmedMessage = inputValue.trim();
+    if (trimmedMessage.length > MAX_MESSAGE_LENGTH) {
+      setError(`Message is too long. Please keep it under ${MAX_MESSAGE_LENGTH} characters.`);
+      return;
+    }
+
     const userMessage: Message = {
       role: "user",
-      content: inputValue.trim(),
+      content: trimmedMessage,
     };
 
     // Add user message immediately
@@ -119,7 +127,7 @@ export default function Chatbot() {
     }
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSend();
@@ -259,13 +267,13 @@ export default function Chatbot() {
                   className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-                    className={`max-w-[80%] rounded-2xl px-4 py-2 ${
+                    className={`max-w-[80%] rounded-2xl px-4 py-2 break-words overflow-hidden ${
                       message.role === "user"
                         ? "bg-gradient-to-r from-blue-500/50 to-purple-500/50 border border-blue-400/60 text-white shadow-lg shadow-blue-500/20"
                         : "bg-gradient-to-r from-purple-600 to-blue-600 text-white"
                     }`}
                   >
-                    <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
+                    <p className="text-sm leading-relaxed whitespace-pre-wrap break-words" style={{ wordBreak: 'break-word', overflowWrap: 'anywhere' }}>{message.content}</p>
                   </div>
                 </motion.div>
               ))}
@@ -299,21 +307,36 @@ export default function Chatbot() {
 
             {/* Input Area */}
             <div className="border-t border-white/10 p-4 bg-[#09090B]">
-              <div className="flex items-center gap-2">
-                <input
+              <div className="flex items-end gap-2">
+                <textarea
                   ref={inputRef}
-                  type="text"
                   value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
+                  onChange={(e) => {
+                    if (e.target.value.length <= MAX_MESSAGE_LENGTH) {
+                      setInputValue(e.target.value);
+                    }
+                  }}
+                  onPaste={(e) => {
+                    e.preventDefault();
+                    setError("Copy-paste is not allowed. Please type your message.");
+                    setTimeout(() => setError(null), 3000); // Clear error after 3 seconds
+                  }}
+                  onCopy={(e) => {
+                    e.preventDefault();
+                  }}
+                  onCut={(e) => {
+                    e.preventDefault();
+                  }}
                   onKeyPress={handleKeyPress}
                   placeholder="Ask AshBOT anything..."
                   disabled={isLoading}
-                  className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                  rows={3}
+                  className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm resize-none overflow-y-auto"
                 />
                 <button
                   onClick={handleSend}
                   disabled={!inputValue.trim() || isLoading}
-                  className="w-10 h-10 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                  className="w-10 h-10 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-white transition-all duration-300 hover:scale-110 flex-shrink-0"
                 >
                   {isLoading ? (
                     <Loader2 className="w-5 h-5 animate-spin" />
@@ -322,9 +345,18 @@ export default function Chatbot() {
                   )}
                 </button>
               </div>
-              <p className="text-xs text-gray-500 mt-2 text-center">
-                Ask me anything about Ashutosh's work, projects, or experience
-              </p>
+              <div className="flex items-center justify-between mt-2">
+                <p className="text-xs text-gray-500">
+                  {inputValue.length > MAX_MESSAGE_LENGTH * 0.8 && (
+                    <span className={inputValue.length > MAX_MESSAGE_LENGTH ? "text-red-400" : "text-yellow-400"}>
+                      {inputValue.length}/{MAX_MESSAGE_LENGTH} characters
+                    </span>
+                  )}
+                </p>
+                <p className="text-xs text-gray-500 text-center flex-1">
+                  Ask me anything about Ashutosh's work, projects, or experience
+                </p>
+              </div>
             </div>
           </motion.div>
         )}
