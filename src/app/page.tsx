@@ -15,6 +15,7 @@ import ContactForm from "@/components/Contact/ContactForm";
 import OpenToWorkBadge from "@/components/OpenToWorkBadge";
 import { ToastContainer } from "react-toastify";
 import Footer from "@/components/footer/Footer";
+import Chatbot from "@/components/Chatbot/Chatbot";
 
 const Page = () => {
   const [theme, setTheme] = useState("dark");
@@ -51,6 +52,7 @@ const Page = () => {
 
       <Footer />
       <OpenToWorkBadge />
+      <Chatbot />
       <ToastContainer />
     </motion.div>
   );

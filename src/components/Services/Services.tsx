@@ -25,7 +25,7 @@ const services: Service[] = [
   {
     icon: Brain,
     title: "AI Integration & Implementation",
-    description: "Seamlessly integrate GPT-4, OpenAI, and other AI models into your existing systems.",
+    description: "Seamlessly integrate GPT-4o, OpenAI, and other AI models into your existing systems.",
   },
   {
     icon: Settings,
