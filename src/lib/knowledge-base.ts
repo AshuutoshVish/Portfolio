@@ -55,64 +55,64 @@ I specialize in building production-grade backend systems, automation pipelines,
 ## Projects
 
 ### 1. IntuitySync
-- Type: AI Automation SaaS • Multi-Tenant • Production Scale
-- Description: Production-grade AI-powered automation platform enabling agencies and businesses to automate content workflows, approvals, publishing, and analytics.
-- Role: Automation Engineer / Backend Engineer
-- Platform: n8n + Python + Supabase + OpenAI + Stripe + Docker
-- Impact: 200+ workflows • 70% automation efficiency • SaaS production system
-- Overview: IntuitySync is a multi-tenant AI automation SaaS used by agencies and teams to automate content creation, approvals, publishing, analytics, and client workflows. I designed and maintained 200+ production n8n workflows handling webhook orchestration, batching, retries, async execution, OAuth token refresh, and credit tracking logic. The platform integrates OpenAI for content generation, Supabase for authentication and storage, Stripe for billing, and multiple social APIs.
-- Technical Highlights: Webhook-driven workflow orchestration, async execution with retries and error workflows, OAuth token refresh handling, multi-tenant RBAC automation logic, credit-based usage tracking, high-volume batch processing
-- Tech Stack: n8n, Python, Supabase, PostgreSQL, OpenAI, Stripe, Docker, REST APIs
+- **Type: AI Automation SaaS** • Multi-Tenant • Production Scale
+- **Description**: Production-grade AI-powered automation platform enabling agencies and businesses to automate content workflows, approvals, publishing, and analytics.
+- **Role**: Automation Engineer / Backend Engineer
+- **Platform**: n8n + Python + Supabase + OpenAI + Stripe + Docker
+- **Impact**: 200+ workflows • 70% automation efficiency • SaaS production system
+- **Overview**: IntuitySync is a multi-tenant AI automation SaaS used by agencies and teams to automate content creation, approvals, publishing, analytics, and client workflows. I designed and maintained 200+ production n8n workflows handling webhook orchestration, batching, retries, async execution, OAuth token refresh, and credit tracking logic. The platform integrates OpenAI for content generation, Supabase for authentication and storage, Stripe for billing, and multiple social APIs.
+- **Technical Highlights**: Webhook-driven workflow orchestration, async execution with retries and error workflows, OAuth token refresh handling, multi-tenant RBAC automation logic, credit-based usage tracking, high-volume batch processing
+- **Tech Stack**: n8n, Python, Supabase, PostgreSQL, OpenAI, Stripe, Docker, REST APIs
 
 ### 2. HRMS System
-- Type: Multi-Tenant APIs • Employee Management • Slack Automation • Payroll System
-- Description: Enterprise-grade HR management backend with secure multi-tenant architecture, RBAC, payroll automation, and Slack-driven workflows.
-- Role: Backend Engineer / API Architect
-- Platform: Django + DRF + MySQL + Docker
-- Impact: Enterprise-ready HR automation platform
-- Overview: A production-ready HRMS backend supporting multiple organizations with strict data isolation, JWT authentication, RBAC roles, attendance tracking, leave workflows, payroll generation, and document management. Integrated Slack bots for approvals and notifications, automated payslip emails, secure file uploads, and role-based access control for Admin, HR, Manager, and Employee roles.
-- Technical Highlights: Multi-tenant data isolation architecture, JWT authentication with role-based access control, Slack interactive workflows and bots, automated payroll processing and notifications, secure document upload pipelines, API-first architecture with Swagger and Redoc, timezone-aware scheduling and workflows
-- Tech
+- **Type**: Multi-Tenant APIs • Employee Management • Slack Automation • Payroll System
+- **Description**: Enterprise-grade HR management backend with secure multi-tenant architecture, RBAC, payroll automation, and Slack-driven workflows.
+- **Role**: Backend Engineer / API Architect
+- **Platform**: Python + Django + DRF + MySQL + Docker
+- **Impact**: Enterprise-ready HR automation platform
+- **Overview**: A production-ready HRMS backend supporting multiple organizations with strict data isolation, JWT authentication, RBAC roles, attendance tracking, leave workflows, payroll generation, and document management. Integrated Slack bots for approvals and notifications, automated payslip emails, secure file uploads, and role-based access control for Admin, HR, Manager, and Employee roles.
+- **Technical Highlights**: Multi-tenant data isolation architecture, JWT authentication with role-based access control, Slack interactive workflows and bots, automated payroll processing and notifications, secure document upload pipelines, API-first architecture with Swagger and Redoc, timezone-aware scheduling and workflows
+- **Tech Stack**: Django, DRF, MySQL, Docker, REST APIs
 
 ### 3. Stock Hub Data Analytics Platform
-- Type: BigQuery • Stock Market Data Analytics • Financial Dashboards
-- Description: Full-stack platform for querying, insighting, analyzing, and exporting historical stock market data with optimized batch processing.
-- Role: Full Stack / Backend Engineer
-- Platform: FastAPI + BigQuery + Pandas + React + TypeScript
-- Impact: 60–70% query optimization • Scalable analytics
-- Overview: Built a scalable analytics platform for processing historical stock market data with multi-ticker batch queries, optimized BigQuery pipelines, vectorized Pandas processing, and automated Excel exports to Google Drive. The system supports index/sector filtering, dynamic time ranges, batch execution for hundreds of tickers, and delivers low-latency analytics for investment research and reporting.
-- Technical Highlights: Optimized BigQuery batch queries (~60–70% faster), vectorized Pandas analytics for high throughput, multi-ticker parallel processing architecture, secure service-account authentication, robust error handling and retries, automated cloud-based report exports, scalable REST API design
-- Tech Stack: Python, Flask, BigQuery, Pandas, Google Drive API, React, Gunicorn, Service Accounts
+- **Type**: BigQuery • Stock Market Data Analytics • Financial Dashboards
+- **Description**: Full-stack platform for querying, insighting, analyzing, and exporting historical stock market data with optimized batch processing.
+- **Role**: Full Stack / Backend Engineer
+- **Platform**: Python + FastAPI + BigQuery + Pandas + React + TypeScript
+- **Impact**: 60–70% query optimization • Scalable analytics
+- **Overview**: Built a scalable analytics platform for processing historical stock market data with multi-ticker batch queries, optimized BigQuery pipelines, vectorized Pandas processing, and automated Excel exports to Google Drive. The system supports index/sector filtering, dynamic time ranges, batch execution for hundreds of tickers, and delivers low-latency analytics for investment research and reporting.
+- **Technical Highlights**: Optimized BigQuery batch queries (~60–70% faster), vectorized Pandas analytics for high throughput, multi-ticker
+- **Tech Stack**: Python, Flask, BigQuery, Pandas, Google Drive API, React, Gunicorn, Service Accounts
 
 ### 4. OpenEvals
-- Type: LLM Evaluation • LLM-as-Judge • AI Quality Platform
-- Description: Web platform for automated evaluation of LLM outputs using structured scoring and feedback pipelines.
-- Role: Full Stack Engineer
-- Platform: Next.js + OpenAI + LangChain
-- Impact: Automated AI quality evaluation at scale
-- Overview: OpenEvals is a production-ready LLM evaluation platform that automates correctness and conciseness scoring using the LLM-as-Judge methodology. The system supports concurrent batch evaluations, structured rubric-based scoring, explainable feedback generation, and secure server-side API orchestration. Designed for reliability, extensibility, and high-throughput evaluation workflows.
-- Technical Highlights: LLM-as-Judge evaluation pipelines, rubric-based structured scoring, concurrent request execution, strict JSON schema validation, secure server-side API key handling, extensible evaluator architecture, production-grade error handling
-- Tech Stack: Next.js, TypeScript, OpenAI API, LangChain, Tailwind CSS, Serverless Functions, Zod Validation
+- **Type**: LLM Evaluation • LLM-as-Judge • AI Quality Platform
+- **Description**: Web platform for automated evaluation of LLM outputs using structured scoring and feedback pipelines.
+- **Role**: Full Stack Engineer
+- **Platform**: Next.js + OpenAI + LangChain
+- **Impact**: Automated AI quality evaluation at scale
+- **Overview**: OpenEvals is a production-ready LLM evaluation platform that automates correctness and conciseness scoring using the LLM-as-Judge methodology. The system supports concurrent batch evaluations, structured rubric-based scoring, explainable feedback generation, and secure server-side API orchestration. Designed for reliability, extensibility, and high-throughput evaluation workflows.
+- **Technical Highlights**: LLM-as-Judge evaluation pipelines, rubric-based structured scoring, concurrent request execution, strict JSON schema validation, secure server-side API key handling, extensible evaluator architecture, production-grade error handling
+- **Tech Stack**: Next.js, TypeScript, OpenAI API, LangChain, Tailwind CSS, Serverless Functions, Zod Validation
 
 ### 5. Portfolio Website
-- Type: Modern UI • Responsive • Performance Optimized • SEO Optimized
-- Description: A modern portfolio website showcasing projects, skills, and professional experience with smooth animations and optimized performance.
-- Role: Full Stack Developer
-- Platform: Next.js + React + TypeScript + Tailwind CSS
-- Impact: Personal branding and showcase platform
-- Overview: A modern portfolio built with Next.js featuring responsive layouts, smooth animations, SEO optimization, and clean UI architecture. The website is hosted on Vercel and is optimized for performance and SEO.
-- Tech Stack: Next.js, React, TypeScript, Tailwind CSS, Framer Motion
+- **Type**: Modern UI • Responsive • Performance Optimized • SEO Optimized
+- **Description**: A modern portfolio website showcasing projects, skills, and professional experience with smooth animations and optimized performance.
+- **Role**: Full Stack Developer
+- **Platform**: Next.js + React + TypeScript + Tailwind CSS + OpenAI
+- **Impact**: Personal branding and showcase platform
+- **Overview**: A modern portfolio built with Next.js featuring responsive layouts, smooth animations, SEO optimization, and clean UI architecture. The website is hosted on Vercel and is optimized for performance and SEO.
+- **Tech Stack**: Next.js, React, TypeScript, Tailwind CSS, Framer Motion
 - Link: https://ashutoshautomations.vercel.app/
 
 ### 6. Workflow Automation (n8n)
-- Type: Enterprise Automation • Multi-Tenant • High-Volume Pipelines • Webhook-driven • Scheduled Jobs • Retry & Error Handling
-- Description: Production-grade workflow automation system enabling teams to orchestrate complex business processes with retries, scheduling, and scalable execution.
-- Role: Automation Engineer
-- Platform: n8n + Supabase + REST APIs + GraphQL + metaAPI + OpenAI
-- Impact: Automated high-volume workflows with strong reliability and scalability
-- Overview: A production-grade workflow automation platform designed to orchestrate complex business processes such as content generation, content posting on social media, onboarding, approvals, notifications, data synchronization, and AI-driven tasks. The system supports multi-tenant workflows, webhook-driven triggers, scheduled jobs, retries, error handling, and parallel execution. Designed for operational reliability and scalability in real-world environments.
-- Technical Highlights: High-volume webhook-driven automation pipelines, fault-tolerant retry and error workflows, parallel execution and batching, secure API integrations, multi-tenant workflow isolation, containerized deployment using Docker
-- Tech Stack: n8n, REST APIs, Webhooks, Cron Scheduling, Supabase (PostgreSQL)
+- **Type**: Enterprise Automation • Multi-Tenant • High-Volume Pipelines • Webhook-driven • Scheduled Jobs • Retry & Error Handling
+- **Description**: Production-grade workflow automation system enabling teams to orchestrate complex business processes with retries, scheduling, and scalable execution.
+- **Role**: Automation Engineer
+- **Platform**: n8n + Supabase + REST APIs + GraphQL + metaAPI + OpenAI
+- **Impact**: Automated high-volume workflows with strong reliability and scalability
+- **Overview**: A production-grade workflow automation platform designed to orchestrate complex business processes such as content generation, content posting on social media, onboarding, approvals, notifications, data synchronization, and AI-driven tasks. The system supports multi-tenant workflows, webhook-driven triggers, scheduled jobs, retries, error handling, and parallel execution. Designed for operational reliability and scalability in real-world environments.
+- **Technical Highlights**: High-volume webhook-driven automation pipelines, fault-tolerant retry and error workflows, parallel execution and batching, secure API integrations, multi-tenant workflow isolation, containerized deployment using Docker
+- **Tech Stack**: n8n, REST APIs, Webhooks, Cron Scheduling, Supabase (PostgreSQL)
 
 ## Services Offered
 
